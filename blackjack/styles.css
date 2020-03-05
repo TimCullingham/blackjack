@@ -1,0 +1,328 @@
+body {
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+    background-image: url('images/background2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+p, h1, h2, h3 {
+    color:rgb(255, 0, 0);
+    font-family: 'Girassol', cursive;
+    letter-spacing: 3px;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 50px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text {
+    color: white;
+    text-align: center;
+    font-family: 'Girassol', cursive;
+    letter-spacing: 3px;
+    font-size: 25px;
+    padding: 10px 20px;
+    text-decoration: underline;
+}
+
+.total {
+    color: white;
+    text-align: center;
+    color: red;
+    font-weight: 900;
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 15px 25px;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    text-shadow: 1px 1px black; 
+    font-family: 'Merriweather', serif;
+    font-size: 1.2em;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.5);
+	position: relative;	
+	overflow: hidden;
+}
+
+.btn::before, .btn::after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: rgba(255,255,255,0.25);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	-webkit-transform: translate(0,-100%);
+	transform: translate(0,-100%);
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+.btn::after{
+	-webkit-transition-delay: 0.2s; /* Safari */
+    transition-delay: 0.2s;
+}
+.btn:hover::before, .btn:hover::after{
+	-webkit-transform: translate(0,0);
+	transform: translate(0,0);
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.clubs, .spades {
+    color: black;
+}
+
+.hearts, .diams {
+    color: red;
+}
+
+.hearts .suit::after{
+    content: '\2665';
+}
+
+.diams .suit::after{
+    content: '\2666';
+}
+
+.spades .suit::after{
+    content: '\2660';
+}
+
+.clubs .suit::after{
+    content: '\2663';
+}
+
+.icard {
+    height: 160px;
+    width: 120px;
+    padding: 3px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    left: 100px;
+    display: inline-block;
+    font-family: 'Lato';
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+#dealerHolder .icard {
+    animation: none;
+}
+
+.deal {
+    text-align: center;
+}
+
+.top-card {
+    font-size: 30px;
+    line-height: 20px;
+    left: 2px;
+    top: 2px;
+}
+
+.content-card {
+    text-align: center;
+    font-size: 70px;
+}
+
+.bottom-card {
+    font-size: 30px;
+    line-height: 20px;
+    right: 2px;
+    bottom: 2px;
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+}
+
+#dealerHolder, #playerHolder {
+    height: 180px;
+    width: 500px;
+}
+
+#dealerHolder {
+    animation: none;
+}
+
+#message {
+    color: white;
+    font-family: 'Merriweather', serif;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+
+#cover {
+    height: 160px;
+    width: 120px;
+    background-color: brown;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: absolute;
+    padding: 3px;
+}
+
+.deckitem {
+    height: 160px;
+    width: 120px;
+    background-color: brown;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: absolute;
+    padding: 3px;
+    right: 10px;
+    bottom: 220px;
+}
+
+#cardNumber {
+    right: 10px;
+    bottom: 420px;
+    position: absolute;
+    font-family: 'Merriweather', serif;
+    color: white;
+    font-size: 20px;
+}
+
+#deckone {
+    right:9px;
+}
+
+#deckone:hover{
+    transform: rotateY(180deg);
+}
+
+#decktwo {
+    right:8px;
+}
+
+#deckthree {
+    right:7px;
+}
+
+#deckfour {
+    right:6px;
+}
+
+#deckfive {
+    right:5px;
+}
+
+#output {
+    font-size: 1.5em;
+}
+
+#btndeal, #myactions {
+    display: none;
+}
+
+#myactions {
+    text-align: center;
+}
+
+#message {
+    height: 90px;
+    font-size: 19px;
+    text-align: center;
+}
+
+#btnhold {
+    background-color: green;
+}
+
+#btnhit {
+    background-color: red;
+}
+
+#maxbet {
+    background-color: red;
+    font-size: 15px;
+}
+
+#btnstart {
+    background-color: black;
+}
+
+#mybet {
+    font-size: 30px;
+    margin: 5px 20px;
+    border-radius: 8px;
+}
+
+#start {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+
+#btndeal {
+    background-color: orange;
+    text-align: center;
+    margin: 5px;
+}
+
+.card-container {
+    height: 150px;
+    perspective: 600;
+    position: relative;
+    width: 150px;
+}
+
+.spade {
+    height: 100px;
+    position: absolute;
+    left: 10px;
+    animation: rotation 5s infinite linear;
+}
+
+.spadetwo {
+    height: 100px;
+    position: absolute;
+    right: 10px;
+    animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

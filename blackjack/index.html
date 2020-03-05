@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="images/blackjack.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BlackJack</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Girassol|Merriweather&display=swap" rel="stylesheet">
+</head>
+<body>
+    <img class="spade" src="images/Spades.png" alt="black spade">
+    <img class="spadetwo" src="images/Spades.png" alt="black spade">
+    <audio id="cardflip">
+        <source src="sounds/cardflip.wav" type="audio/wav">
+    </audio>
+    <audio id="applause">
+        <source src="sounds/applause.wav" type="audio/wav">
+    </audio>
+    <audio id="boo">
+        <source src="sounds/boo.wav" type="audio/wav">
+    </audio>
+    <div>
+        <h1>Blackjack</h1>
+        <div id="message">Rules: Player must get up to 21 and beat the dealer to win.<br>If the player or the dealer gets over 21 they automatically lose.</div>
+    </div>
+    <div>
+        
+        <div id="start">
+            <button id="btnstart" type="button" onclick="Start()" class="btn">Start game</button>
+        </div>
+    </div>
+    <div class="total">Available Money: $<span id="dollars">100</span></div>
+    <div class="text">Bet Amount $<input type="number" id="mybet" value="5" min="1" max="100"><button id="maxbet" type="button" onclick="maxbet()" class="btn">Max Bet</button></div>
+
+
+    <div id="deck">
+        <div id="deckHolder">
+            <div class="deckitem" id="deckone"></div>
+            <div class="deckitem" id="decktwo"></div>
+            <div class="deckitem" id="deckthree"></div>
+            <div class="deckitem" id="deckfour"></div>
+            <div class="deckitem" id="deckfive"></div>
+        </div>
+        <div id="cardNumber">Cards dealt: <span id="deckCount"></span></div>
+    </div>
+    <div id="output">
+        <div class="text">Dealer Hand : <span id="dValue"></span></div>
+        <div id="dealerHolder"></div>
+        <div class="text">Player Hand : <span id="pValue"></span></div>
+        <div id="playerHolder"></div>
+        <div id="myactions">
+            <button id="btnhold" type="button" onclick="cardAction('hold')" class="btn">Hold</button>
+            <button id="btnhit" type="button" onclick="cardAction('hit')" class="btn">Hit</button>
+        </div>
+    </div>
+    <div class="deal">
+        <button id="btndeal" type="button" onclick="dealNew()" class="btn">Deal</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
